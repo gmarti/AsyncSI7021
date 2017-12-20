@@ -27,7 +27,7 @@
 #endif
 
 #include <Wire.h>
-#include <AsyncSI7021.h>
+#include "AsyncSI7021.h"
 
 AsyncSI7021::AsyncSI7021() {}
 
