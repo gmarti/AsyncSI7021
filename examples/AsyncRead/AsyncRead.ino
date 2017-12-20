@@ -1,5 +1,26 @@
-#include <AsyncSI7021.h>
+/*
+    AsyncRead.ino
+ 
+    Created by Grégory Marti <greg.marti@gmail.com>
+    Copyright 2017 Grégory Marti
+ 
+    This file is part of the AsyncSI7021 library.
+ 
+    AsyncSI7021 library is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include <AsyncSI7021.h>
 
 AsyncSI7021 sensor;
 
@@ -40,7 +61,7 @@ void loop() {
   Serial.print("Read temperature of humidity measurement : ");
   startTime = millis();
 
-  float temperature = sensor.readTemperatureAfterHumidity();
+  float temperature = sensor.readTemperatureFromHumidityMeasurement();
 
   duration = millis() - startTime;
   Serial.print(duration);
