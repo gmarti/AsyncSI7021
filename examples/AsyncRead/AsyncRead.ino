@@ -51,7 +51,7 @@ void loop() {
   Serial.print(duration);
   Serial.println("ms (following datasheet, should be between (10+7) and (12+10.8)ms)");
 
-  float humidity = sensor.getHumditityMeasurement();
+  float humidity = sensor.getHumidityMeasurement();
 
   Serial.print("Humidity : ");
   Serial.print(humidity, 2);

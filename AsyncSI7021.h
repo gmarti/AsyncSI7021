@@ -59,7 +59,7 @@ class AsyncSI7021 {
 
     bool isMeasurementReady();
 
-    float getHumditityMeasurement();
+    float getHumidityMeasurement();
     float getTemperatureMeasurement();
     float readTemperatureFromHumidityMeasurement();
 

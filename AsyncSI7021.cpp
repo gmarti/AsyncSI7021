@@ -40,7 +40,7 @@ bool AsyncSI7021::begin() {
 
 float AsyncSI7021::syncHumidityMeasurement() {
   _write(SI7021_CMD_RH_HOLDMM, false);
-  return getHumditityMeasurement();
+  return getHumidityMeasurement();
 }
 
 float AsyncSI7021::syncTemperatureMeasurement() {
@@ -56,7 +56,7 @@ bool AsyncSI7021::startTemperatureMeasurement() {
   _write(SI7021_CMD_TEMP_NOHOLDMM);
 }
 
-float AsyncSI7021::getHumditityMeasurement() {
+float AsyncSI7021::getHumidityMeasurement() {
   return _humidityConversion(_read16());
 }
 
