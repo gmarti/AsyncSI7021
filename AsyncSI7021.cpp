@@ -99,13 +99,13 @@ uint16_t AsyncSI7021::_read16() {
   return result;
 }
 
-int AsyncSI7021::_write(uint8_t reg, bool i2cStopMessage  = true) {
+int AsyncSI7021::_write(uint8_t reg, bool i2cStopMessage) {
   Wire.beginTransmission(SI7021_I2C_ADDRESS);
   Wire.write(reg);
   return Wire.endTransmission(i2cStopMessage);
 }
 
-int AsyncSI7021::_writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage  = true) {
+int AsyncSI7021::_writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage) {
   Wire.beginTransmission(SI7021_I2C_ADDRESS);
   Wire.write(reg);
   Wire.write(value);
