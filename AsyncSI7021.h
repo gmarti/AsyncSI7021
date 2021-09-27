@@ -54,8 +54,8 @@ class AsyncSI7021 {
     float syncHumidityMeasurement();
     float syncTemperatureMeasurement();
 
-    bool startHumidityMeasurement();
-    bool startTemperatureMeasurement();
+    int startHumidityMeasurement();
+    int startTemperatureMeasurement();
 
     bool isMeasurementReady();
 
@@ -69,8 +69,8 @@ class AsyncSI7021 {
 
     uint8_t _read();
     uint16_t _read16();
-    void _write(uint8_t reg, bool i2cStopMessage   = true);
-    void _writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage  = true);
+    int _write(uint8_t reg, bool i2cStopMessage   = true);
+    int _writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage  = true);
 };
 
 #endif // AsyncSI7021_H

@@ -48,12 +48,12 @@ float AsyncSI7021::syncTemperatureMeasurement() {
   return getTemperatureMeasurement();
 }
 
-bool AsyncSI7021::startHumidityMeasurement() {
-  _write(SI7021_CMD_RH_NOHOLDMM);
+int AsyncSI7021::startHumidityMeasurement() {
+  return _write(SI7021_CMD_RH_NOHOLDMM);
 }
 
-bool AsyncSI7021::startTemperatureMeasurement() {
-  _write(SI7021_CMD_TEMP_NOHOLDMM);
+int AsyncSI7021::startTemperatureMeasurement() {
+  return _write(SI7021_CMD_TEMP_NOHOLDMM);
 }
 
 float AsyncSI7021::getHumidityMeasurement() {
@@ -99,15 +99,15 @@ uint16_t AsyncSI7021::_read16() {
   return result;
 }
 
-void AsyncSI7021::_write(uint8_t reg, bool i2cStopMessage  = true) {
+int AsyncSI7021::_write(uint8_t reg, bool i2cStopMessage  = true) {
   Wire.beginTransmission(SI7021_I2C_ADDRESS);
   Wire.write(reg);
-  Wire.endTransmission(i2cStopMessage);
+  return Wire.endTransmission(i2cStopMessage);
 }
 
-void AsyncSI7021::_writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage  = true) {
+int AsyncSI7021::_writeValue(uint8_t reg, uint8_t value, bool i2cStopMessage  = true) {
   Wire.beginTransmission(SI7021_I2C_ADDRESS);
   Wire.write(reg);
   Wire.write(value);
-  Wire.endTransmission(i2cStopMessage);
+  return Wire.endTransmission(i2cStopMessage);
 }
